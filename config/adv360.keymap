@@ -70,11 +70,11 @@
     };
     layer_5 {
       bindings = <
-        &none &kp F1        &kp F2       &kp F3       &kp F4       &kp F5       &none                                                                          &none &kp F6        &kp F7        &kp F8       &kp F9       &kp F10      &kp F11
-        &none &kp DE_COLN   &kp DE_LABK  &kp DE_RABK  &kp LS(DE_P) &kp LS(DE_Y) &none                                                                          &none &kp LS(DE_F)  &kp LS(DE_G)  &kp LS(DE_C) &kp LS(DE_R) &kp LS(DE_L) &kp F12
-        &none &kp LS(DE_A)  &kp LS(DE_O) &kp LS(DE_E) &kp LS(DE_U) &kp LS(DE_I) &none           &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none &kp LS(DE_D)  &kp LS(DE_H)  &kp LS(DE_T) &kp LS(DE_N) &kp LS(DE_S) &none
-        &none &kp DE_DQUO   &kp LS(DE_Q) &kp LS(DE_J) &kp LS(DE_K) &kp LS(DE_X)        &none    &none     &none    &none &none &kp ESCAPE  &none     &none           &kp LS(DE_B)  &kp LS(DE_M)  &kp LS(DE_W) &kp LS(DE_V) &kp LS(DE_Z) &none
-        &none &none         &none        &none        &none                            &mo5     &mo 4     &none                &none       &kp ENTER &kp SPACE                     &kp LEFT      &kp DOWN     &kp UP       &kp RIGHT    &none
+        # &none &kp F1        &kp F2       &kp F3       &kp F4       &kp F5       &none                                                                          &none &kp F6        &kp F7        &kp F8       &kp F9       &kp F10      &kp F11
+        # &none &kp DE_COLN   &kp DE_LABK  &kp DE_RABK  &kp LS(DE_P) &kp LS(DE_Y) &none                                                                          &none &kp LS(DE_F)  &kp LS(DE_G)  &kp LS(DE_C) &kp LS(DE_R) &kp LS(DE_L) &kp F12
+        # &none &kp LS(DE_A)  &kp LS(DE_O) &kp LS(DE_E) &kp LS(DE_U) &kp LS(DE_I) &none           &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none &kp LS(DE_D)  &kp LS(DE_H)  &kp LS(DE_T) &kp LS(DE_N) &kp LS(DE_S) &none
+        # &none &kp DE_DQUO   &kp LS(DE_Q) &kp LS(DE_J) &kp LS(DE_K) &kp LS(DE_X)        &none    &none     &none    &none &none &kp ESCAPE  &none     &none           &kp LS(DE_B)  &kp LS(DE_M)  &kp LS(DE_W) &kp LS(DE_V) &kp LS(DE_Z) &none
+        # &none &none         &none        &none        &none                            &mo5     &mo 4     &none                &none       &kp ENTER &kp SPACE                     &kp LEFT      &kp DOWN     &kp UP       &kp RIGHT    &none
       >;
     };
     layer_6 {
