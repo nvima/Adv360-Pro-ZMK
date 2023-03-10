@@ -20,18 +20,18 @@
       };
     };
 
-    SHIFT_BACKTICK: SHIFT_BACKTICK {
-        label = "SHIFT_BACKTICK";
+    AE: AE {
+        label = "AE";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp DE_ACUT &kp DE_ACUT>, <&macro_tap &kp BACKSPACE>;
+        bindings = <&macro_tap &kp E &kp E>;
     };
 
     BACKTICK: BACKTICK {
         label = "BACKTICK";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp LS(DE_ACUT) &kp LS(DE_ACUT)>, <&macro_tap &kp BACKSPACE>;
+        bindings = <&macro_tap &kp LS(E) &kp LS(E)>;
     };
 
   keymap {
@@ -39,74 +39,29 @@
 
     default_layer {
       bindings = <
-        &none &kp F1        &kp F2       &kp F3       &kp F4     &kp F5     &none                                                                          &none &kp F6      &kp F7     &kp F8    &kp F9     &kp F10    &kp F11
-        &none &kp DE_SCLN   &kp DE_COMM  &kp DE_DOT   &kp DE_P   &kp DE_Y   &none                                                                          &none &kp DE_F    &kp DE_G   &kp DE_C  &kp DE_R   &kp DE_L   &kp F12
-        &none &kp DE_A      &kp DE_O     &kp DE_E     &kp DE_U   &kp DE_I   &none           &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none &kp DE_D    &kp DE_H   &kp DE_T  &kp DE_N   &kp DE_S   &none
-        &none &kp DE_QUOT   &kp DE_Q     &kp DE_J     &kp DE_K   &kp DE_X          &none    &none     &mo 7    &none &none &kp ESCAPE  &none     &none           &kp DE_B    &kp DE_M   &kp DE_W  &kp DE_V   &kp DE_Z   &none
-        &none &none         &none        &none        &none                        &mo 5    &mo 4     &mo 6                &none       &kp ENTER &kp SPACE                   &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT  &none
+        &none &kp F1    &kp F2     &kp F3   &kp F4    &kp F5  &bootloader                                                                        &bootloader   &kp F6  &kp F7    &kp F8    &kp F9  &kp F10    &kp F11
+        &none &kp SEMI  &kp COMMA  &kp DOT  &kp P     &kp Y   &none                                                                              &none         &kp F   &kp G     &kp C     &kp R   &kp L      &kp F12
+        &none &kp A     &kp O      &kp E    &kp U     &kp I   &none               &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none         &kp D   &kp H     &kp T     &kp N   &kp S      &none
+        &none &kp SQT   &kp Q      &kp J    &kp K     &kp X          &none        &none     &kp LGUI &none &none &kp ESCAPE  &none     &none                   &kp B   &kp M     &kp W     &kp V   &kp Z      &none
+        &none &none     &none      &none    &none                    &kp LSHFT    &mo 1     &mo 2                &none       &kp ENTER &kp SPACE                       &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none
       >;
     };
     keypad {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                                       &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                        &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &none &none &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+        &none &trans    &trans     &trans    &trans      &trans     &none                                                                             &none &trans     &trans    &trans     &trans     &trans     &trans
+        &none &kp 1     &kp 2      &kp 3     &kp 4       &kp 5      &none                                                                             &none &kp 6      &kp 7     &kp 8      &kp 9      &kp 0      &trans
+        &none &kp AMPS  &kp LBKT   &kp LBRC  &kp LPAR    &kp EXCL   &none              &trans    &trans   &none &none &trans      &trans              &none &kp EQUAL  &kp RPAR  &kp RBRC   &kp RBKT   &kp PIPE   &none
+        &none &kp PLUS  &kp MINUS  &kp STAR  &kp SLASH   &kp QMARK         &none       &none     &none    &none &none &trans      &none     &none           &kp TILDE  &kp BSLH  &kp PRCNT  &kp UNDER  &kp HASH   &none
+        &none &none     &none      &none     &none                         &trans      &trans    &none                &none       &trans    &kp TAB                    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
       >;
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                                       &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                                       &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &none &none &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
-      >;
-    };
-    mod {
-      bindings = <
-        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                                                          &trans                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
-        &none &none        &none        &none        &none        &none        &bootloader                                                                                                    &bootloader            &none        &none        &none        &none        &none        &none
-        &none &none        &none        &none        &none        &none        &rgb_ug RGB_MEFS_CMD 5                 &bt BT_CLR &bt BT_CLR &none &none &bt BT_CLR &bt BT_CLR                 &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none        &none        &none
-        &none &none        &none        &none        &none        &none                               &none           &none      &none      &none &none &none      &none      &none                                  &none        &none        &none        &none        &none        &none
-        &none &none        &none        &bl BL_INC   &bl BL_DEC                                       &rgb_ug RGB_TOG &bl BL_TOG &none                  &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none        &none        &none
-      >;
-    };
-    layer_4 {
-      bindings = <
-        &none &kp F1        &kp F2       &kp F3       &kp F4      &kp F5      &none                                                                             &none &kp F6      &kp F7       &kp F8      &kp F9      &kp F10     &kp F11
-        &none &kp DE_1      &kp DE_2     &kp DE_3     &kp DE_4    &kp DE_5    &none                                                                             &none &kp DE_6    &kp DE_7     &kp DE_8    &kp DE_9    &kp DE_0    &kp F12
-        &none &kp DE_AMPR   &kp DE_LBRC  &kp DE_LCBR  &kp DE_LPRN &kp DE_EXLM &none              &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none &kp DE_EQL  &kp DE_RPRN  &kp DE_RCBR &kp DE_RBRC &kp DE_PIPE &none
-        &none &kp DE_PLUS   &kp DE_MINS  &kp DE_ASTR  &kp DE_SLSH &kp DE_QUES        &none       &none     &none    &none &none &kp ESCAPE  &none     &none           &kp DE_TILD &kp DE_BSLS  &kp DE_PERC &kp DE_UNDS &kp DE_HASH &none
-        &none &none         &none        &none        &none                          &kp LSHIFT  &mo 4     &none                &none       &kp ENTER &kp TAB                     &kp LEFT     &kp DOWN    &kp UP      &kp RIGHT   &none
-      >;
-    };
-    layer_5 {
-      bindings = <
-        &none &kp F1        &kp F2       &kp F3       &kp F4       &kp F5       &none                                                                          &none &kp F6        &kp F7        &kp F8       &kp F9       &kp F10      &kp F11
-        &none &kp DE_COLN   &kp DE_LABK  &kp DE_RABK  &kp LS(DE_P) &kp LS(DE_Y) &none                                                                          &none &kp LS(DE_F)  &kp LS(DE_G)  &kp LS(DE_C) &kp LS(DE_R) &kp LS(DE_L) &kp F12
-        &none &kp LS(DE_A)  &kp LS(DE_O) &kp LS(DE_E) &kp LS(DE_U) &kp LS(DE_I) &none           &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none &kp LS(DE_D)  &kp LS(DE_H)  &kp LS(DE_T) &kp LS(DE_N) &kp LS(DE_S) &none
-        &none &kp DE_DQUO   &kp LS(DE_Q) &kp LS(DE_J) &kp LS(DE_K) &kp LS(DE_X)        &none    &none     &none    &none &none &kp ESCAPE  &none     &none           &kp LS(DE_B)  &kp LS(DE_M)  &kp LS(DE_W) &kp LS(DE_V) &kp LS(DE_Z) &none
-        &none &none         &none        &none        &none                            &mo 5     &mo 4     &none                &none       &kp ENTER &kp SPACE                     &kp LEFT      &kp DOWN     &kp UP       &kp RIGHT    &none
-      >;
-    };
-    layer_6 {
-      bindings = <
-        &none &kp F1        &kp F2       &kp F3       &kp F4      &kp F5     &none                                                                          &none &SHIFT_BACKTICK &kp F7     &kp F8    &kp F9     &kp F10    &kp F11
-        &none &kp DE_SCLN   &kp DE_COMM  &kp DE_DOT   &kp DE_P    &kp DE_Y   &none                                                                          &none &kp DE_F              &kp DE_G   &kp DE_C  &kp DE_R   &kp DE_L   &kp F12
-        &none &kp DE_ADIA   &kp DE_ODIA  &kp DE_E     &kp DE_UDIA &kp DE_I   &none           &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none &kp DE_DLR            &kp DE_H   &kp DE_T  &kp DE_N   &kp DE_S   &none
-        &none &kp DE_QUOT   &kp DE_AT    &kp DE_J     &kp DE_K    &kp DE_X          &none    &none     &none    &none &none &kp ESCAPE  &none     &none           &BACKTICK       &kp DE_M   &kp DE_W  &kp DE_V   &kp DE_Z   &none
-        &none &none         &none        &none        &none                         &mo 5    &mo 4     &mo 6                &none       &kp ENTER &kp SPACE                             &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT  &none
-      >;
-    };
-    layer_7 {
-      bindings = <
-        &none &kp F1           &kp F2          &kp F3       &kp F4          &kp F5     &none                                                                          &none &SHIFT_BACKTICK &kp F7     &kp F8    &kp F9     &kp F10    &kp F11
-        &none &kp DE_SCLN      &kp DE_COMM     &kp DE_DOT   &kp DE_P        &kp DE_Y   &none                                                                          &none &kp DE_F              &kp DE_G   &kp DE_C  &kp DE_R   &kp DE_L   &kp F12
-        &none &kp LS(DE_ADIA)  &kp LS(DE_ODIA) &kp DE_E     &kp LS(DE_UDIA) &kp DE_I   &none           &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none &kp DE_DLR            &kp DE_H   &kp DE_T  &kp DE_N   &kp DE_S   &none
-        &none &kp DE_QUOT      &kp DE_AT       &kp DE_J     &kp DE_K        &kp DE_X          &none    &none     &mo 7    &none &none &kp ESCAPE  &none     &none           &BACKTICK       &kp DE_M   &kp DE_W  &kp DE_V   &kp DE_Z   &none
-        &none &none            &none           &none        &none                             &mo 5    &mo 4     &mo 6                &none       &kp ENTER &kp SPACE                             &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT  &none
+        &trans &trans &trans &trans &trans &trans  &none                                                       &none &trans     &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &none                                                       &none &trans     &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &none &none &trans &trans        &none &kp DLLR   &trans &trans &trans  &trans  &trans
+        &trans &trans &kp AT &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &kp GRAVE  &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                  &trans &trans &trans  &trans  &trans
       >;
     };
   };
