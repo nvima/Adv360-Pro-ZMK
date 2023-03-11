@@ -80,7 +80,7 @@
 #define DE_COMM COMMA // ,
 #define DE_DOT  DOT  // .
 #define DE_MINS FSLH // -
-#define DE_DEG  S(DE_CIRC) // °
+#define DE_DEG  LS(DE_CIRC) // °
 #define DE_EXLM LS(DE_1)    // !
 #define DE_DQUO LS(DE_2)    // "
 #define DE_SECT LS(DE_3)    // §

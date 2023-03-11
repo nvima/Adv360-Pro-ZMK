@@ -13,7 +13,7 @@
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS";
           #binding-cells = <2>;
-          tapping-term-ms = <200>;
+          tapping-term-ms = <300>;
           quick_tap_ms = <175>;
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
@@ -28,7 +28,7 @@
         mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     c_comma: c_comma {
-        label = "commac";
+        label = "c_comma";
         compatible = "zmk,behavior-mod-morph";
         #binding-cells = <0>;
         bindings = <&kp DE_COMM>, <&kp DE_LABK>;
@@ -58,7 +58,13 @@
         label = "c_backtick";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp LS(DE_ACUT) &kp LS(DE_ACUT)>;
+        bindings = <&macro_tap &kp DE_GRV &kp DE_GRV>;
+    };
+    c_circ: c_circ {
+        label = "c_circ";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_tap &kp DE_CIRC &kp DE_CIRC>;
     };
 
   keymap {
@@ -66,29 +72,38 @@
 
     default_layer {
       bindings = <
-        &none &kp F1        &kp F2       &kp F3       &kp F4     &kp F5      &bootloader                                                                     &bootloader &kp F6      &kp F7     &kp F8    &kp F9     &kp F10    &kp F11
-        &none &c_semicol    &c_comma     &c_dot       &kp DE_P   &kp DE_Y    &none                                                                           &none       &kp DE_F    &kp DE_G   &kp DE_C  &kp DE_R   &kp DE_L   &kp F12
-        &none &kp DE_A      &kp DE_O     &kp DE_E     &kp DE_U   &kp DE_I    &none            &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none       &kp DE_D    &kp DE_H   &kp DE_T  &kp DE_N   &kp DE_S   &none
-        &none &c_quote      &kp DE_Q     &kp DE_J     &kp DE_K   &kp DE_X           &none     &none     &none    &none &none &kp ESCAPE  &none     &none                 &kp DE_B    &kp DE_M   &kp DE_W  &kp DE_V   &kp DE_Z   &none
-        &none &none         &none        &none        &none                         &kp LSHFT &mo 1     &mo 2                &none       &kp ENTER &kp SPACE                         &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT  &none
+        &none &kp F1           &kp F2             &kp F3       &kp F4             &kp F5      &rgb_ug RGB_TOG                                                                  &bl BL_TOG   &kp F6        &kp F7       &kp F8      &kp F9      &kp F10     &kp F11
+        &none &c_semicol       &c_comma           &c_dot       &kp DE_P           &kp DE_Y    &none                                                                            &bl BL_CYCLE &kp DE_F      &kp DE_G     &kp DE_C    &kp DE_R    &kp DE_L    &kp F12
+        &none &kp DE_A         &kp DE_O           &kp DE_E     &kp DE_U           &kp DE_I    &bt BT_NXT       &kp LCTRL &kp LALT &none &none &kp LGUI  &kp BSPC               &none        &kp DE_D      &kp DE_H     &kp DE_T    &kp DE_N    &kp DE_S    &none
+        &none &c_quote         &kp DE_Q           &kp DE_J     &kp DE_K           &kp DE_X           &none     &none     &none    &none &none &kp ESC   &none     &none                     &kp DE_B      &kp DE_M     &kp DE_W    &kp DE_V    &kp DE_Z    &none
+        &mo 3 &none            &none              &none        &none                                 &kp LSHFT &mo 1     &mo 2                &none     &kp ENTER &kp SPACE                               &kp LEFT     &kp DOWN    &kp UP      &kp RIGHT   &mo 3
       >;
     };
     keypad {
       bindings = <
-        &none &none         &none        &none        &none       &none       &none                                                                             &none &none       &none        &none       &none       &none       &none
-        &none &kp DE_1      &kp DE_2     &kp DE_3     &kp DE_4    &kp DE_5    &none                                                                             &none &kp DE_6    &kp DE_7     &kp DE_8    &kp DE_9    &kp DE_0    &none
-        &none &kp DE_AMPR   &kp DE_LBRC  &kp DE_LCBR  &kp DE_LPRN &kp DE_EXLM &none           &trans    &trans   &none &none &trans      &trans                 &none &kp DE_EQL  &kp DE_RPRN  &kp DE_RCBR &kp DE_RBRC &kp DE_PIPE &none
-        &none &kp DE_PLUS   &kp DE_MINS  &kp DE_ASTR  &kp DE_SLSH &kp DE_QUES        &none    &none     &none    &none &none &trans      &none     &none              &kp DE_TILD &kp DE_BSLS  &kp DE_PERC &kp DE_UNDS &kp DE_HASH &none
-        &none &none         &none        &none        &none                          &trans   &trans    &none                &none       &trans    &kp TAB                        &kp LEFT     &kp DOWN    &kp UP      &kp RIGHT   &none
+        &none &none            &none              &none        &none              &none       &none                                                                            &none       &none         &none        &none       &none       &none       &kp C_VOL_UP
+        &none &kp DE_1         &kp DE_2           &kp DE_3     &kp DE_4           &kp DE_5    &none                                                                            &none       &kp DE_6      &kp DE_7     &kp DE_8    &kp DE_9    &kp DE_0    &kp C_VOL_DN
+        &none &kp DE_AMPR      &kp DE_LBRC        &kp DE_LCBR  &kp DE_LPRN        &kp DE_EXLM &none            &trans    &trans   &none &none &trans    &trans                 &none       &kp DE_EQL    &kp DE_RPRN  &kp DE_RCBR &kp DE_RBRC &kp DE_PIPE &kp C_MUTE
+        &none &kp DE_PLUS      &kp DE_MINS        &kp DE_ASTR  &kp DE_SLSH        &kp DE_QUES        &none     &none     &none    &none &none &trans    &none     &none                    &kp DE_TILD   &kp DE_BSLS  &kp DE_PERC &kp DE_UNDS &kp DE_HASH &kp C_PLAY_PAUSE
+        &none &none            &none              &none        &none                                 &trans    &trans    &none                &none     &trans    &kp TAB                                &kp LEFT     &kp DOWN    &kp UP      &kp RIGHT   &none
       >;
     };
     fn {
       bindings = <
-        &none &none         &none        &none        &none       &none      &none                                                                             &none &none           &none      &none     &none      &none      &none
-        &none &kp DE_SUP2   &kp DE_SUP3  &none        &kp DE_SECT &none      &none                                                                             &none &c_sbacktick    &kp DE_DEG &kp DE_C  &kp DE_R   &kp DE_L   &none
-        &none &kp DE_ADIA   &kp DE_ODIA  &kp DE_EURO  &kp DE_UDIA &none      &none           &trans    &trans   &none &none &trans      &trans                 &none &kp DE_DLR      &none      &kp DE_T  &kp DE_N   &kp DE_S   &none
-        &none &none         &kp DE_AT    &none        &none       &none             &none    &none     &none    &none &none &trans      &none     &none              &c_backtick     &none      &kp DE_W  &kp DE_V   &kp DE_Z   &none
-        &none &none         &none        &none        &none                         &trans   &trans    &trans               &none       &trans    &trans                             &none      &none     &none      &none      &none
+        &none &none            &none              &none        &none              &none       &none                                                                            &none       &none         &none        &none       &none       &none       &kp C_BRI_INC
+        &none &trans           &kp DE_SUP2        &kp DE_SUP3  &kp DE_SECT        &none       &none                                                                            &none       &c_sbacktick  &kp DE_DEG   &c_circ     &trans      &trans      &kp C_BRI_DEC
+        &none &hm LS(SQT) SQT  &hm LS(SEMI) SEMI  &kp DE_EURO  &mt LS(LBKT) LBKT  &none       &none            &trans    &trans   &none &none &trans    &trans                 &none       &kp DE_DLR    &none        &trans      &trans      &kp DE_SS   &none
+        &none &trans           &kp DE_AT          &trans       &trans             &none              &none     &none     &none    &none &none &trans    &none     &none                    &c_backtick   &none        &trans      &trans      &trans      &none
+        &none &none            &none              &none        &none                                 &trans    &trans    &trans               &none     &trans    &trans                                 &none        &none       &none       &none       &none
+      >;
+    };
+    mod {
+      bindings = <
+        &none  &none           &none              &none        &none              &none       &bootloader                                                                      &bootloader  &none        &none        &none        &none        &none        &none
+        &none  &none           &none              &none        &none              &none       &reset                                                                           &reset       &none        &none        &none        &none        &none        &none
+        &none  &none           &none              &none        &none              &none       &none          &none      &none      &none &none &none      &none                &none        &none        &none        &none        &none        &none        &none
+        &none  &none           &none              &none        &none              &none                &none &none      &none      &none &none &none      &none      &none                  &none        &none        &none        &none        &none        &none
+        &trans &none           &none              &none        &none                                   &none &none      &none                  &none      &none      &none                               &none        &none        &none        &none        &trans
       >;
     };
   };
