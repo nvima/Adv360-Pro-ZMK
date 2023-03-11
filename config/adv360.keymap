@@ -68,7 +68,7 @@
     keypad {
       bindings = <
         &none &trans    &trans     &trans    &trans      &trans     &none                                                                             &none &trans     &trans    &trans     &trans     &trans     &trans
-        &none &kp 1     &kp 2      &kp 3     &kp 4       &kp 5      &none                                                                             &none &kp 6      &kp 7     &kp 8      &kp 9      &kp 0      &trans
+        &none &kp N1    &kp N2     &kp N3    &kp N4      &kp N5     &none                                                                             &none &kp N6     &kp N7    &kp N8     &kp N9     &kp N0     &trans
         &none &kp AMPS  &kp LBKT   &kp LBRC  &kp LPAR    &kp EXCL   &none              &trans    &trans   &none &none &trans      &trans              &none &kp EQUAL  &kp RPAR  &kp RBRC   &kp RBKT   &kp PIPE   &none
         &none &kp PLUS  &kp MINUS  &kp STAR  &kp SLASH   &kp QMARK         &none       &none     &none    &none &none &trans      &none     &none           &kp TILDE  &kp BSLH  &kp PRCNT  &kp UNDER  &kp HASH   &none
         &none &none     &none      &none     &none                         &trans      &trans    &none                &none       &trans    &kp TAB                    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
@@ -76,11 +76,11 @@
     };
     fn {
       bindings = <
-        &trans &trans        &trans    &trans     &trans        &trans  &none                                                       &none &trans    &trans &trans &trans  &trans  &trans
-        &trans &kp LS(RA(1)) &kp RA(2) &kp RA(3)  &kp LS(RA(S)) &trans  &none                                                       &none &FWDTCK   &trans &trans &trans  &trans  &trans
-        &trans &AE_SML       &kp RA(P) &kp RA(5)  &kp RA(Y)     &trans  &none        &trans &trans &none &none &trans &trans        &none &kp DLLR  &trans &trans &trans  &trans  &trans
-        &trans &trans        &kp AT    &trans     &trans        &trans        &none  &none  &trans &none &none &trans &none  &none        &BCKTCK   &trans &trans &trans  &trans  &trans
-        &trans &trans        &trans    &trans     &trans                      &trans &trans &trans             &trans &trans &trans                 &trans &trans &trans  &trans  &trans
+        &trans &trans        &trans    &trans     &trans        &trans  &none                                                       &none &trans    &trans           &trans &trans  &trans    &trans
+        &trans &kp LS(RA(1)) &kp RA(2) &kp RA(3)  &kp LS(RA(S)) &trans  &none                                                       &none &FWDTCK   &kp LS(RA(SEMI)) &trans &trans  &trans    &trans
+        &trans &AE_SML       &kp RA(P) &kp RA(5)  &kp RA(Y)     &trans  &none        &trans &trans &none &none &trans &trans        &none &kp DLLR  &trans           &trans &trans  &kp RA(S) &trans
+        &trans &trans        &kp AT    &trans     &trans        &trans        &none  &none  &trans &none &none &trans &none  &none        &BCKTCK   &trans           &trans &trans  &trans    &trans
+        &trans &trans        &trans    &trans     &trans                      &trans &trans &trans             &trans &trans &trans                 &trans           &trans &trans  &trans    &trans
       >;
     };
   };
