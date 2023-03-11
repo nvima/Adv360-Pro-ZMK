@@ -20,18 +20,37 @@
       };
     };
 
-    AE: AE {
-        label = "AE";
+    AE_SML: AE_SML {
+        label = "AE_SML";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp E &kp E>;
+        bindings = <&macro_tap &kp LS(SQT) &kp A>;
+    };
+    AE_BIG: AE_BIG {
+        label = "AE_SML";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_tap &kp LS(SQT) &kp LS(A)>;
     };
 
-    BACKTICK: BACKTICK {
-        label = "BACKTICK";
+    QUOTE: QUOTE {
+        label = "QUOTE";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp LS(E) &kp LS(E)>;
+        bindings = <&macro_tap &kp SQT &kp SPACE>;
+    };
+
+    BCKTCK: BCKTCK {
+        label = "BCKTCK";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_tap &kp GRAVE &kp SPACE>;
+    };
+    FWDTCK: FWDTCK {
+        label = "FWDTCK";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_tap &kp SQT &kp SQT>;
     };
 
   keymap {
@@ -42,14 +61,14 @@
         &none &kp F1    &kp F2     &kp F3   &kp F4    &kp F5  &bootloader                                                                        &bootloader   &kp F6  &kp F7    &kp F8    &kp F9  &kp F10    &kp F11
         &none &kp SEMI  &kp COMMA  &kp DOT  &kp P     &kp Y   &none                                                                              &none         &kp F   &kp G     &kp C     &kp R   &kp L      &kp F12
         &none &kp A     &kp O      &kp E    &kp U     &kp I   &none               &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none         &kp D   &kp H     &kp T     &kp N   &kp S      &none
-        &none &kp SQT   &kp Q      &kp J    &kp K     &kp X          &none        &none     &kp LGUI &none &none &kp ESCAPE  &none     &none                   &kp B   &kp M     &kp W     &kp V   &kp Z      &none
+        &none &QUOTE    &kp Q      &kp J    &kp K     &kp X          &none        &none     &kp LGUI &none &none &kp ESCAPE  &none     &none                   &kp B   &kp M     &kp W     &kp V   &kp Z      &none
         &none &none     &none      &none    &none                    &kp LSHFT    &mo 1     &mo 2                &none       &kp ENTER &kp SPACE                       &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none
       >;
     };
     keypad {
       bindings = <
         &none &trans    &trans     &trans    &trans      &trans     &none                                                                             &none &trans     &trans    &trans     &trans     &trans     &trans
-        &none &kp N1    &kp N2     &kp N3    &kp N4      &kp N5     &none                                                                             &none &kp N6     &kp N7    &kp N8     &kp N9     &kp N0     &trans
+        &none &kp 1     &kp 2      &kp 3     &kp 4       &kp 5      &none                                                                             &none &kp 6      &kp 7     &kp 8      &kp 9      &kp 0      &trans
         &none &kp AMPS  &kp LBKT   &kp LBRC  &kp LPAR    &kp EXCL   &none              &trans    &trans   &none &none &trans      &trans              &none &kp EQUAL  &kp RPAR  &kp RBRC   &kp RBKT   &kp PIPE   &none
         &none &kp PLUS  &kp MINUS  &kp STAR  &kp SLASH   &kp QMARK         &none       &none     &none    &none &none &trans      &none     &none           &kp TILDE  &kp BSLH  &kp PRCNT  &kp UNDER  &kp HASH   &none
         &none &none     &none      &none     &none                         &trans      &trans    &none                &none       &trans    &kp TAB                    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
@@ -57,11 +76,11 @@
     };
     fn {
       bindings = <
-        &trans &trans &trans &trans &trans &trans  &none                                                       &none &trans     &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none                                                       &none &trans     &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &none &none &trans &trans        &none &kp DLLR   &trans &trans &trans  &trans  &trans
-        &trans &trans &kp AT &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &kp GRAVE  &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                  &trans &trans &trans  &trans  &trans
+        &trans &trans        &trans    &trans     &trans        &trans  &none                                                       &none &trans    &trans &trans &trans  &trans  &trans
+        &trans &kp LS(RA(1)) &kp RA(2) &kp RA(3)  &kp LS(RA(S)) &trans  &none                                                       &none &FWDTCK   &trans &trans &trans  &trans  &trans
+        &trans &AE_SML       &kp RA(P) &kp RA(5)  &kp RA(Y)     &trans  &none        &trans &trans &none &none &trans &trans        &none &kp DLLR  &trans &trans &trans  &trans  &trans
+        &trans &trans        &kp AT    &trans     &trans        &trans        &none  &none  &trans &none &none &trans &none  &none        &BCKTCK   &trans &trans &trans  &trans  &trans
+        &trans &trans        &trans    &trans     &trans                      &trans &trans &trans             &trans &trans &trans                 &trans &trans &trans  &trans  &trans
       >;
     };
   };
