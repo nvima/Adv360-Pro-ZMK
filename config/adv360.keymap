@@ -24,34 +24,45 @@
         label = "AE_SML";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp LS(SQT) &kp A>;
+        bindings = <&kp LS(SQT)>, <&kp A>;
     };
     AE_BIG: AE_BIG {
-        label = "AE_SML";
+        label = "AE_BIG";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp LS(SQT) &kp LS(A)>;
+        bindings = <&macro_tap &kp LS(SQT) &kp A>;
     };
-
-    QUOTE: QUOTE {
-        label = "QUOTE";
+    OE_SML: OE_SML {
+        label = "OE_SML";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp SQT &kp SPACE>;
+        bindings = <&kp LS(SQT)>, <&kp O>;
     };
-
-    BCKTCK: BCKTCK {
-        label = "BCKTCK";
+    OE_BIG: OE_BIG {
+        label = "OE_BIG";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp GRAVE &kp SPACE>;
+        bindings = <&macro_tap &kp LS(SQT) &kp O>;
     };
-    FWDTCK: FWDTCK {
-        label = "FWDTCK";
+    UE_SML: UE_SML {
+        label = "UE_SML";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp SQT &kp SQT>;
+        bindings = <&kp LS(SQT)>, <&kp U>;
     };
+    UE_BIG: UE_BIG {
+        label = "UE_BIG";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_tap &kp LS(SQT) &kp U>;
+    };
+    EUR: EUR {
+        label = "EUR";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_tap &kp LS(SQT) &kp U>;
+    };
+    
 
   keymap {
     compatible = "zmk,keymap";

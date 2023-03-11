@@ -34,3 +34,21 @@
     #binding-cells = <0>;
     bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
   };
+  BCKTCK: BCKTCK {
+    label = "BCKTCK";
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &kp GRAVE &kp SPACE>;
+  };
+  FWDTCK: FWDTCK {
+    label = "FWDTCK";
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &kp SQT &kp SQT>;
+  };
+  QUOTE: QUOTE {
+    label = "QUOTE";
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &kp SQT &kp SPACE>;
+  };
