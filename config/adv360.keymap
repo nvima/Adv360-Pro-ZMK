@@ -33,6 +33,27 @@
         #binding-cells = <0>;
         bindings = <&macro_tap &kp LS(DE_ACUT) &kp LS(DE_ACUT)>, <&macro_tap &kp BACKSPACE>;
     };
+    c_semicol: c_semicol {
+        label = "c_semicol";
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp DE_SCLN>, <&kp DE_COLN>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    c_comma: c_comma {
+        label = "commac";
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp DE_COMM>, <&kp DE_LABK>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    c_dot: c_dot {
+        label = "c_dot";
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp DE_DOT>, <&kp DE_RABK>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
 
   keymap {
     compatible = "zmk,keymap";
@@ -40,7 +61,7 @@
     default_layer {
       bindings = <
         &none &kp F1        &kp F2       &kp F3       &kp F4     &kp F5     &bootloader                                                                     &bootloader &kp F6      &kp F7     &kp F8    &kp F9     &kp F10    &kp F11
-        &none &kp DE_SCLN   &kp DE_COMM  &kp DE_DOT   &kp DE_P   &kp DE_Y   &none                                                                           &none       &kp DE_F    &kp DE_G   &kp DE_C  &kp DE_R   &kp DE_L   &kp F12
+        &none &c_semicol    &c_comma     &c_dot       &kp DE_P   &kp DE_Y   &none                                                                           &none       &kp DE_F    &kp DE_G   &kp DE_C  &kp DE_R   &kp DE_L   &kp F12
         &none &kp DE_A      &kp DE_O     &kp DE_E     &kp DE_U   &kp DE_I   &none            &kp LCTRL &kp LALT &none &none &kp LGUI    &kp BACKSPACE       &none       &kp DE_D    &kp DE_H   &kp DE_T  &kp DE_N   &kp DE_S   &none
         &none &kp DE_QUOT   &kp DE_Q     &kp DE_J     &kp DE_K   &kp DE_X          &none     &none     &none    &none &none &kp ESCAPE  &none     &none                 &kp DE_B    &kp DE_M   &kp DE_W  &kp DE_V   &kp DE_Z   &none
         &none &none         &none        &none        &none                        &kp LSHFT &mo 1     &mo 2                &none       &kp ENTER &kp SPACE                         &kp LEFT   &kp DOWN  &kp UP     &kp RIGHT  &none
